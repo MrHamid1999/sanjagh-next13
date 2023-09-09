@@ -1,0 +1,8 @@
+{
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"html.format.indentInnerHtml": true,
+	"html.autoClosingTags": true,
+	"html.format.wrapAttributes": "force-expand-multiline",
+	"window.zoomLevel": 1
+}
