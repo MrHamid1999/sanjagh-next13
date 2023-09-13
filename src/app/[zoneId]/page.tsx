@@ -1,11 +1,15 @@
 import ServiceCart from "@/components/ServiceCart";
 import getServicesApi from "@/lib/getServicesApi";
-import getZonesApi from "@/lib/getZonesApi";
 import Link from "next/link";
-import React from "react";
 
-const Page = async ({ params: { zoneId } }) => {
-	const data = await getServicesApi(zoneId);
+type ZonePageProps = {
+	params: {
+		zoneId: string;
+	};
+};
+
+const Page = async ({ params: { zoneId } }: ZonePageProps) => {
+	const data: Services = await getServicesApi(zoneId);
 
 	return (
 		<main>
@@ -23,13 +27,7 @@ const Page = async ({ params: { zoneId } }) => {
 };
 
 export const generateStaticParams = async () => {
-	const data = await getZonesApi();
-
-	return data.map((item) => {
-		return {
-			zoneId: item.id,
-		};
-	});
+	return [];
 };
 
 export default Page;
